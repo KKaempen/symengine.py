@@ -4751,6 +4751,11 @@ def ccode(expr):
     return symengine.ccode(deref(expr_.thisptr)).decode("utf-8")
 
 
+def mathml(expr):
+    cdef Basic expr_ = sympify(expr)
+    return symengine.mathml(deref(expr_.thisptr)).decode("utf-8")
+
+
 def piecewise(*v):
     cdef symengine.PiecewiseVec vec
     cdef pair[rcp_const_basic, RCP[symengine.const_Boolean]] p

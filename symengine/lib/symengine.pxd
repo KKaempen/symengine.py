@@ -1000,6 +1000,9 @@ cdef extern from "<symengine/parser.h>" namespace "SymEngine":
 cdef extern from "<symengine/codegen.h>" namespace "SymEngine":
     string ccode(const Basic &x) nogil except +
 
+cdef extern from "<symengine/mathml.h>" namespace "SymEngine":
+    string mathml(const Basic &x) nogil except +
+
 cdef extern from "<symengine/sets.h>" namespace "SymEngine":
     cdef cppclass Set(Basic):
         RCP[const Set] set_intersection(RCP[const Set] &o) nogil except +
